@@ -30,7 +30,7 @@ const VoiceRSS = {
   }
 };
 
-// Passing Jokes to VoiceRSS API
+// Passing joke variable to VoiceRSS API src
 function tellMe(joke) {
     VoiceRSS.speech({
       key: 'd118a2d67d984d2bbd1d6c4b61e2ca41',
@@ -58,7 +58,7 @@ async function getJokes() {
     } else {
       joke = data.joke
     }
-    tellMe(joke);
+    tellMe(joke); // will pass the tellMe function here to convert jokes to speech
 
   } catch (error) {
     //Catch errors
@@ -66,4 +66,5 @@ async function getJokes() {
   }
 }
 
-getJokes();
+//When you click the button, the getJokes function will run
+button.addEventListener('click', getJokes);
